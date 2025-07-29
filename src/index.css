@@ -1,13 +1,570 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+  }
+  
+  .card-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .icon {
+    width: 48px;
+    height: 48px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .icon-small {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .section h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    grid-column: span 2;
+  }
+  
+  .input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .error {
+    border-color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  .button-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .submit-area {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .dashboard-container {
+    padding: 2rem;
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .dashboard-subtitle {
+    color: #555;
+  }
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .stat-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-label {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .stat-value.green {
+    color: #16a34a;
+  }
+  
+  .stat-icon-container {
+    padding: 0.75rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stat-icon-container.blue {
+    background: #e0f2fe;
+  }
+  
+  .stat-icon-container.green {
+    background: #dcfce7;
+  }
+  
+  .stat-icon-container.yellow {
+    background: #fef9c3;
+  }
+  
+  .stat-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .loan-table-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .loan-table-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .loan-table-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .loan-table-scroll {
+    overflow-x: auto;
+  }
+  
+  .loan-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .loan-table th, .loan-table td {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .applicant-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .applicant-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #f3f4f6;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .avatar-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+  }
+  
+  .applicant-info {
+    margin-left: 0.75rem;
+  }
+  
+  .applicant-name {
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .applicant-email {
+    color: #6b7280;
+  }
+  
+  .loan-amount {
+    font-weight: 500;
+  }
+  
+  .loan-term {
+    color: #6b7280;
+  }
+  
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .status-approved {
+    background: #dcfce7;
+    color: #166534;
+  }
+  
+  .status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .status-pending {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  
+  .status-text {
+    margin-left: 0.5rem;
+    text-transform: capitalize;
+  }
+  
+  .date-applied {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .calendar-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #9ca3af;
+  }
+  
+  .view-button {
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .view-button:hover {
+    text-decoration: underline;
+  }
+  
+  .view-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+  }
+  
+  .dashboard-empty {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
+  .empty-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #d1d5db;
+    margin: 0 auto 1rem;
+  }
+  
+  .empty-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .empty-text {
+    color: #6b7280;
+  }
+  .loan-empty {
+    text-align: center;
+    padding: 3rem;
+  }
+  
+  .loan-empty .icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .loan-status {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .loan-status.approved {
+    background-color: #e6ffed;
+    border: 1px solid #c6f6d5;
+    color: #2f855a;
+  }
+  .loan-status.rejected {
+    background-color: #ffe6e6;
+    border: 1px solid #feb2b2;
+    color: #c53030;
+  }
+  .loan-status.pending {
+    background-color: #fffbea;
+    border: 1px solid #fefcbf;
+    color: #b7791f;
+  }
+  
+  .loan-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .loan-info-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .loan-info-header .avatar-wrapper {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    background: #c3dafe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loan-info-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .info-section {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .info-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .info-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .info-section li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .calculation {
+    background-color: #ebf8ff;
+  }
+  
+  .status-update {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .status-form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .status-form .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .status-form textarea,
+  .status-form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+  }
+  
+  .status-update button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3182ce;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .app-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #ebf4ff, #e0e7ff);
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-header {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+  }
+  
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-icon {
+    background-color: #2563eb;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .icon-white {
+    color: white;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logo-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: #4b5563;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .nav-button.active {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .nav-label {
+    display: none;
+  }
+  
+  @media (min-width: 640px) {
+    .nav-label {
+      display: inline;
+    }
+  }
+    
