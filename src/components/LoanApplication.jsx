@@ -135,7 +135,7 @@ function LoanApplication({ onSubmit }) {
             <h3><DollarSign className="icon-small" /> Loan Details</h3>
             <div className="form-grid">
               <div className="form-group">
-                <label>Loan Amount (₹)</label>
+                <label>Loan Amount ($)</label>
                 <input
                   type="number"
                   name="loanAmount"
@@ -191,7 +191,7 @@ function LoanApplication({ onSubmit }) {
             <h3><Building className="icon-small" /> Financial Information</h3>
             <div className="form-grid">
               <div className="form-group">
-                <label>Annual Income (₹)</label>
+                <label>Annual Income ($)</label>
                 <input
                   type="number"
                   name="annualIncome"
